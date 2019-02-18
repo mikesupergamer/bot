@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-token = ''
-
 
 bot.on('ready', () => {
   console.log('Connecté en tant que ' + bot.user.tag);
@@ -659,4 +657,4 @@ bot.on('message', message => {       // Machine à définition
 
 
 
-bot.login(token);
+bot.login(process.env.TOKEN);
