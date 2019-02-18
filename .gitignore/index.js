@@ -12,7 +12,7 @@ bot.on('message', message => {       // Machine à définition
   if (message.content.startsWith('+def')) {
 
     if (message.content.startsWith('+deflist')) {
-      message.channel.send("__**Liste des termes définis**__ \n``` - Allosexualité / Zedsexualité / Z-sexualité \n - Androsexualité \n - Androgynosexualité \n - Apothisexualité \n - Asexuel \n - Autosexuel \n - Bisexualité \n - Caed(o)sexualité \n - Cétérosexualité \n - Cupiosexualité \n - Demisexualité / Demi-sexualité \n - Dysphorasexualité \n - Fraysexualité / Ignotasexualité \n - Greysexualité / Graysexualité / Gray-(a)sexualité / Grey-(a)sexualité \n - Gynésexualité \n - Hétérosexualité  \n - Homosexualité \n - Homosexuel \n - Homosexuelle \n - Lamvanosexualité \n - Lith(o)sexualité \n - Monosexualité \n - Multisexualité \n - Neurosexualité \n - Ninsexualité \n - Novisexualité \n - Omnisexualité \n - Omniasexualité / Panasexualité \n - Pansexualité \n - Polysexualité \n - Placiosexualité \n - Proquasexualité \n - Proquusexualité \n - Reciprosexualité \n - Quoisexualité / WTFsexualité / Whatsexualité \n - Questionning \n - Sapiosexuel \n - Skoliosexuel \n - Xumsexuel```")
+      message.channel.send("__**Liste des termes définis**__ \n``` - Allosexualité / Zedsexualité / Z-sexualité \n - Androsexualité \n - Androgynosexualité \n - Apothisexualité \n - Asexuel \n - Autosexuel \n - Bisexualité \n - Caed(o)sexualité \n - Cétérosexualité \n - Cupiosexualité \n - Demisexualité / Demi-sexualité \n - Dysphorasexualité \n - Fraysexualité / Ignotasexualité \n - Greysexualité / Graysexualité / Gray-(a)sexualité / Grey-(a)sexualité \n - Gynésexualité \n - Hétérosexualité  \n - Homosexualité \n - Homosexuel \n - Homosexuelle \n - Lamvanosexualité \n - Lith(o)sexualité \n - Monosexualité \n - Morosexualité \n - Multisexualité \n - Neurosexualité \n - Ninsexualité \n - Novisexualité \n - Omnisexualité \n - Omniasexualité / Panasexualité \n - Pansexualité \n - Polysexualité \n - Placiosexualité \n - Proquasexualité \n - Proquusexualité \n - Reciprosexualité \n - Quoisexualité / WTFsexualité / Whatsexualité \n - Questionning \n - Sapiosexuel \n - Skoliosexuel \n - Xumsexuel```")
     }
 
 
@@ -356,7 +356,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Sapiosexualité',
             icon_url: 'https://pm1.narvii.com/6726/cf750e99473583b7aa8d7811d8e585939304165dv2_128.jpg'
           },
-          title: "Attirance sexuelle envers un ou plusieurs individus, essentiellement déclenchée par l\'intellect, la vivacité d\'esprit de ce(s) dernier(s)."
+          title: "Attirance sexuelle déclenchée par l\'intellect, la vivacité d\'esprit de la personne. Opposé de la morosexualité. Le préfixe \"sapio\" peut s\'appliquer à d\'autres sexualités. Exemple : sapio-homosexuel, sapio-pansexuel."
 
         }
       })
@@ -630,7 +630,19 @@ bot.on('message', message => {       // Machine à définition
 
 
 
+    else if (message.content.startsWith('+def morosex')) {
+      message.channel.send({
+        embed: {
+          color: 3447003,
+          author: {
+            name: 'Morosexualité',
+            icon_url: 'https://pm1.narvii.com/7106/d3efd23d45972a5f117428ec9455da1e6639b89ar1-500-302v2_128.jpg'
+          },
+          title: 'Attirance sexuelle déclenchée par l\'innocence, l\'insouciance ou la stupidité de la personne. Opposé de la sapiosexualité. Le préfixe "moro" peut s\'appliquer à d\'autres sexualités. Exemple : moro-homosexuel, moro-pansexuel. ' 
 
+        }
+      })
+    }
     
 
 
@@ -651,6 +663,7 @@ bot.on('message', message => {       // Machine à définition
 
   }
 });
+
 
 
 
