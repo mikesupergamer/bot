@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
+
 bot.on('ready', () => {
   console.log('Connecté en tant que ' + bot.user.tag);
 });
@@ -37,7 +38,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Homosexualité',
             icon_url: 'https://pm1.narvii.com/6475/4e3ed569458657ac960f67973649245dd1edd63c_128.jpg'
           },
-          title: 'Attirance envers un genre identique au sien / à un des siens.',
+          title: 'Attirance envers un genre identique au sien / à un des siens. Opposé de l\'hétérosexualité. ',
         }
       })
     }
@@ -50,7 +51,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Hétérosexualité',
             icon_url: 'https://pm1.narvii.com/6853/9ddda264651ae6b3a5ba086f8be4a4d3d9803cf2v2_128.jpg'
           },
-          title: 'Attirance envers un genre différent du sien / d\'un des siens.',
+          title: 'Attirance envers un genre différent du sien / d\'un des siens. Opposé de l\'homosexualité. ',
 
         }
       })
@@ -63,7 +64,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Asexualité',
             icon_url: 'https://pm1.narvii.com/6451/8be4a4c74f20b263f19ac460add7410861241127_128.jpg'
           },
-          title: 'Absence d\'attirance sexuelle. Antonyme de \" Allosexualité \"',
+          title: 'Absence d\'attirance sexuelle. Opposé de l\'allosexualité.',
 
         }
       })
@@ -111,7 +112,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Allosexualité',
             icon_url: 'https://pm1.narvii.com/6824/48fbc72fc5cd33cf9f817a92a37734a73b818c49v2_128.jpg'
           },
-          title: 'Présence d\'attirance sexuelle. Antonyme à " Asexualité ". ',
+          title: 'Présence d\'attirance sexuelle. Opposé de l\'asexualité. ',
 
         }
       })
