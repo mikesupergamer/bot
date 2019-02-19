@@ -184,7 +184,7 @@ bot.on('message', message => {       // Machine à définition
           color: 3447003,
           author: {
             name: 'Cupi(o)sexualité',
-            icon_url: 'https://pm1.narvii.com/6918/6a4e3db704e003f5acac64aaea96fb79df4d22d7r1-307-164v2_128.j'
+            icon_url: 'https://pm1.narvii.com/6918/6a4e3db704e003f5acac64aaea96fb79df4d22d7r1-307-164v2_128.jpg'
           },
           title: 'Désir de vouloir ressentir de l\'attirance sexuelle, sans toutefois en ressentir. Dérivé de l\'asexualité.',
 
