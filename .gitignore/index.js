@@ -12,7 +12,7 @@ bot.on('message', message => {       // Machine à définition
   if (message.content.startsWith('+def')) {
 
     if (message.content.startsWith('+deflist')) {
-      message.channel.send("__**Liste des termes définis**__ \n``` - Allosexualité / Zedsexualité / Z-sexualité \n - Androsexualité \n - Androgynosexualité \n - Apothisexualité \n - Asexuel \n - Autosexuel \n - Bisexualité \n - Caed(o)sexualité \n - Cétérosexualité \n - Cupiosexualité \n - Demisexualité / Demi-sexualité \n - Dysphorasexualité \n - Fraysexualité / Ignotasexualité \n - Greysexualité / Graysexualité / Gray-(a)sexualité / Grey-(a)sexualité \n - Gynésexualité \n - Hétérosexualité  \n - Homosexualité \n - Homosexuel \n - Homosexuelle \n - Lamvanosexualité \n - Lith(o)sexualité \n - Monosexualité \n - Morosexualité \n - Multisexualité \n - Neurosexualité \n - Ninsexualité \n - Novisexualité \n - Omnisexualité \n - Omniasexualité / Panasexualité \n - Pansexualité \n - Polysexualité \n - Placiosexualité \n - Proquasexualité \n - Proquusexualité \n - Reciprosexualité \n - Quoisexualité / WTFsexualité / Whatsexualité \n - Questionning \n - Sapiosexuel \n - Skoliosexuel \n - Xumsexuel```")
+      message.channel.send("__**Liste des termes définis**__ \n``` - Allosexualité / Zedsexualité / Z-sexualité \n - Androsexualité \n - Androgynosexualité \n - Apothisexualité \n - Asexuel \n - Autosexuel \n - Bisexualité \n - Caed(o)sexualité \n - Cétérosexualité \n - Cupi(o)sexualité \n - Demisexualité / Demi-sexualité \n - Dysphorasexualité \n - Fraysexualité / Ignotasexualité \n - Greysexualité / Graysexualité / Gray-(a)sexualité / Grey-(a)sexualité \n - Gynésexualité \n - Hétérosexualité  \n - Homosexualité \n - Homosexuel \n - Homosexuelle \n - Lamvanosexualité \n - Lith(o)sexualité \n - Monosexualité \n - Morosexualité \n - Multisexualité \n - Neurosexualité \n - Ninsexualité \n - Novisexualité \n - Omnisexualité \n - Omniasexualité / Panasexualité \n - Pansexualité \n - Polysexualité \n - Placiosexualité \n - Proquasexualité \n - Proquusexualité \n - Reciprosexualité \n - Quoisexualité / WTFsexualité / Whatsexualité \n - Questionning \n - Sapiosexuel \n - Skoliosexuel \n - Xumsexuel```")
     }
 
 
@@ -80,7 +80,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Greysexualité',
             icon_url: 'https://pm1.narvii.com/7004/ae7122b5ae1ca1b3d467795f752847f70056feefr1-466-354v2_128.jpg'
           },
-          title: 'Peu d\'attirance sexuelle, entre une orientation sexuelle et asexuelle. Le préfixe \"gris\" peut s\'appliquer à d\'autres sexualités. Exemple : gris-homosexuel, gris-pansexuel. ',
+          title: 'Peu d\'attirance sexuelle, entre une orientation sexuelle et asexuelle. Le préfixe \"gris\" peut s\'appliquer à d\'autres sexualités; exemple : gris-homosexuel, gris-pansexuel. ',
 
         }
       })
@@ -127,7 +127,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Demisexualité',
             icon_url: 'https://pm1.narvii.com/6507/42133d313ddd079a6a2892bd962e9b077dde797a_128.jpg'
           },
-          title: 'Attirance sexuelle uniquement envers des personnes avec qui un lien fort a été crée. Dérivé de la gris-sexualité. Le préfixe \'demi\' peut s\'appliquer à d\'autres sexualités. Exemple : demi-homosexuel, demi-pansexuel.',
+          title: 'Attirance sexuelle uniquement envers des personnes avec qui un lien fort a été crée. Dérivé de la gris-sexualité. Le préfixe \'demi\' peut s\'appliquer à d\'autres sexualités; exemple : demi-homosexuel, demi-pansexuel.',
 
         }
       })
@@ -157,7 +157,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Fraysexualité',
             icon_url: 'https://pm1.narvii.com/6620/752eb91a8a6c3d4e209ee0bd8444cb03f8524d87_128.jpg'
           },
-          title: 'Attirance sexuelle au début d\'une relation, mais s\'estompant au fil du temps. Dérivé de la gris-sexualité. Le préfixe "fray" peut s\'appliquer à d\'autres sexualités. Exemple : fray-homosexuel, fray-pansexuel.',
+          title: 'Attirance sexuelle au début d\'une relation, mais s\'estompant au fil du temps. Dérivé de la gris-sexualité. Le préfixe "fray" peut s\'appliquer à d\'autres sexualités; exemple : fray-homosexuel, fray-pansexuel.',
 
         }
       })
@@ -178,15 +178,15 @@ bot.on('message', message => {       // Machine à définition
 
 
 
-    else if (message.content.startsWith('+def cupiosex')) {
+    else if (message.content.startsWith('+def cupiosex') || message.content.startsWith('+def cupisex')) {
       message.channel.send({
         embed: {
           color: 3447003,
           author: {
-            name: 'Cupiosexualité',
+            name: 'Cupi(o)sexualité',
             icon_url: 'https://pm1.narvii.com/6918/6a4e3db704e003f5acac64aaea96fb79df4d22d7r1-307-164v2_128.j'
           },
-          title: 'Désir de vouloir ressentir de l\'attirance sexuelle, sans toutefois en ressentir. Dérivé de la gris-sexualité.',
+          title: 'Désir de vouloir ressentir de l\'attirance sexuelle, sans toutefois en ressentir. Dérivé de l\'asexualité.',
 
         }
       })
@@ -328,7 +328,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Hypersexualité',
             icon_url: 'https://pm1.narvii.com/6827/896caf2c052e51ea9b5aa6dd17248161a51c47efv2_128.jpg'
           },
-          title: "Fortes attirances sexuelles. Opposé à l'hyposexualité"
+          title: "Fortes attirances sexuelles. Opposé à l'hyposexualité. Le préfixe \"sapio\" peut s\'appliquer à d\'autres sexualités; exemple : hyper-homosexuel, hyper-pansexuel."
 
         }
       })
@@ -342,7 +342,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Hyposexualité',
             icon_url: 'https://pm1.narvii.com/6827/165c45c33ae9100eda2a3ef3144d23edd31c58efv2_128.jpg'
           },
-          title: 'Faibles attirances sexuelles. Opposé à l\'hypersexualité. '
+          title: 'Faibles attirances sexuelles. Opposé à l\'hypersexualité. Le préfixe \"sapio\" peut s\'appliquer à d\'autres sexualités; exemple : hypo-homosexuel, hypo-pansexuel. '
 
         }
       })
@@ -356,7 +356,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Sapiosexualité',
             icon_url: 'https://pm1.narvii.com/6726/cf750e99473583b7aa8d7811d8e585939304165dv2_128.jpg'
           },
-          title: "Attirance sexuelle déclenchée par l\'intellect, la vivacité d\'esprit de la personne. Opposé de la morosexualité. Le préfixe \"sapio\" peut s\'appliquer à d\'autres sexualités. Exemple : sapio-homosexuel, sapio-pansexuel."
+          title: "Attirance sexuelle déclenchée par l\'intellect, la vivacité d\'esprit de la personne. Opposé de la morosexualité. Le préfixe \"sapio\" peut s\'appliquer à d\'autres sexualités; exemple : sapio-homosexuel, sapio-pansexuel."
 
         }
       })
@@ -454,7 +454,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Androgynosexualité',
             icon_url: 'https://image.noelshack.com/fichiers/2019/07/1/1549904258-androgyns.jpg'
           },
-          title: 'Attirance sexuelle envers des personnes de genre(s) du spectre féminin et / ou masculin, et étant androgynes ( physique " masculin et féminin " ( la masculinité et féminité étant subjectifs.ves )). '
+          title: "Attirance sexuelle d'une personne androgyne  ( physique \" masculin et féminin \" ( la masculinité et féminité étant subjectifs.ves )) envers des personnes de genre(s) du spectre féminin et / ou masculin. "
 
         }
       })
@@ -496,7 +496,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Lith(o)sexualité',
             icon_url: 'https://pm1.narvii.com/6620/2396c7254517fea338967ad586c4028771afdbe7_128.jpg'
           },
-          title: 'Fait de ne pas vouloir que l\'attirance sexuelle que l\'on porte à une personne soit réciproque. Dérivé la gris-sexualité. Le préfixe "lith(o)" peut s\'appliquer à d\'autres sexualités. Exemple : lith(o)-homosexuel, lith(o)-pansexuel.'
+          title: 'Fait de ne pas vouloir que l\'attirance sexuelle que l\'on porte à une personne soit réciproque. Dérivé la gris-sexualité. Le préfixe "lith(o)" peut s\'appliquer à d\'autres sexualités; exemple : lith(o)-homosexuel, lith(o)-pansexuel.'
 
         }
       })
@@ -510,7 +510,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Autosexualité',
             icon_url: 'https://pm1.narvii.com/6620/9f56bfd01029f878d36457ca9a8622503e46d08f_128.jpg'
           },
-          title: 'Attirance sexuelle envers soi-même. A ne pas confondre avec le narcissisme. Le préfixe "auto" peut s\'appliquer à d\'autres sexualités. Exemple : auto-homosexuel, auto-pansexuel. '
+          title: 'Attirance sexuelle envers soi-même. A ne pas confondre avec le narcissisme. Le préfixe "auto" peut s\'appliquer à d\'autres sexualités; exemple : auto-homosexuel, auto-pansexuel. '
 
         }
       })
@@ -524,7 +524,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Lamvanosexualité',
             icon_url: 'https://pm1.narvii.com/6743/628ed4d59879f1d532af77b18f870c8190123e2dv2_128.jpg'
           },
-          title: 'Envie que les actes sexuels soient pratiqués uniquement sur soi même, mais ne pas les pratiquer sur les autres. Opposé à la placiosexualité. Le préfixe "lamvano" peut s\'appliquer à d\'autres sexualités. Exemple : lamvano-homosexuel, lamvano-pansexuel. '
+          title: 'Envie que les actes sexuels soient pratiqués uniquement sur soi même, mais ne pas les pratiquer sur les autres. Opposé à la placiosexualité. Le préfixe "lamvano" peut s\'appliquer à d\'autres sexualités; exemple : lamvano-homosexuel, lamvano-pansexuel. '
 
         }
       })
@@ -552,7 +552,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Placiosexualité',
             icon_url: 'https://pm1.narvii.com/6681/9349011a63f05b0c8fd14ad6d84878cd0e2a6304_128.jpg'
           },
-          title: 'Envie de pratiquer uniquement sur les autres, mais qu\'ils ne soient pas pratiqués sur soi-même. Opposé à la placiosexualité. Le préfixe "placio" peut s\'appliquer à d\'autres sexualités. Exemple : placio-homosexuel, placio-pansexuel. '
+          title: 'Envie de pratiquer uniquement sur les autres, mais qu\'ils ne soient pas pratiqués sur soi-même. Opposé à la lamvanosexualité. Le préfixe "placio" peut s\'appliquer à d\'autres sexualités; exemple : placio-homosexuel, placio-pansexuel. '
 
         }
       })
@@ -566,7 +566,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Neurosexualité',
             icon_url: 'https://pm1.narvii.com/6828/3ab58d8d923a601b4305d7584513fe153820b472v2_128.jpg'
           },
-          title: 'Attirance sexuelle liée au neurotype, à la maladie mentale ou/et aux conditions neurologiques d\'un individu. Le préfixe "neuro" peut s\'appliquer à d\'autres sexualités. Exemple : neuro-homosexuel, neuro-pansexuel. '
+          title: 'Attirance sexuelle liée au neurotype, à la maladie mentale ou/et aux conditions neurologiques d\'un individu. Le préfixe "neuro" peut s\'appliquer à d\'autres sexualités; exemple : neuro-homosexuel, neuro-pansexuel. '
 
         }
       })
@@ -594,7 +594,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Dysphorasexualité',
             icon_url: 'https://pm1.narvii.com/6866/045ba174c29f031996b9e1d8cd2fcbad3667e050r1-1153-692v2_128.jpg'
           },
-          title: 'Incapacité à avoir des relations sexuelles à cause de sa dysphorie de genre. Le préfixe "dysphora" peut s\'appliquer à d\'autres sexualités. Exemple : dysphora-homosexuel, dysphora-pansexuel.'
+          title: 'Incapacité à avoir des relations sexuelles à cause de sa dysphorie de genre. Le préfixe "dysphora" peut s\'appliquer à d\'autres sexualités; exemple : dysphora-homosexuel, dysphora-pansexuel.'
 
         }
       })
@@ -622,7 +622,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Reciprosexualité',
             icon_url: 'https://pm1.narvii.com/6852/7b6ed8458c4f3e91be7841f669bae29d8d9c4a72v2_128.jpg'
           },
-          title: 'Attirance sexuelle ne pouvant subsister que quand l\'autre ressent déjà de l\'attirance sexuelle. Le préfixe "recipro" peut s\'appliquer à d\'autres sexualités. Exemple : recipro-homosexuel, recipro-pansexuel. ' 
+          title: 'Attirance sexuelle ne pouvant subsister que quand l\'autre ressent déjà de l\'attirance sexuelle. Le préfixe "recipro" peut s\'appliquer à d\'autres sexualités; exemple : recipro-homosexuel, recipro-pansexuel. ' 
 
         }
       })
@@ -638,7 +638,7 @@ bot.on('message', message => {       // Machine à définition
             name: 'Morosexualité',
             icon_url: 'https://pm1.narvii.com/7106/d3efd23d45972a5f117428ec9455da1e6639b89ar1-500-302v2_128.jpg'
           },
-          title: 'Attirance sexuelle déclenchée par l\'innocence, l\'insouciance ou la stupidité de la personne. Opposé de la sapiosexualité. Le préfixe "moro" peut s\'appliquer à d\'autres sexualités. Exemple : moro-homosexuel, moro-pansexuel. ' 
+          title: 'Attirance sexuelle déclenchée par l\'innocence, l\'insouciance ou la stupidité de la personne. Opposé de la sapiosexualité. Le préfixe "moro" peut s\'appliquer à d\'autres sexualités; exemple : moro-homosexuel, moro-pansexuel. ' 
 
         }
       })
