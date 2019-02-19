@@ -16,6 +16,20 @@ bot.on('message', message => {       // Machine à définition
       message.channel.send("``` - Alloromantisme/ Zedromantisme/ Z-romantisme\n - Androromantisme\n - Androgynoromantisme\n - Apothiromantisme\n - Aromantisme \n - Autoromantisme \n - Biromantisme\n - Caed(o)romantisme\n - Cétéroromantisme\n - Cupi(o)romantisme\n - Demiromantisme/ Demi-romantisme\n - Dysphoraromantisme\n - Frayromantisme/ Ignotaromantisme\n - Greyromantisme/ Grayromantisme/ Gray-(a)romantisme/ Grey-(a)romantisme\n - Gynéromantisme\n - Hétéroromantisme \n - Homoromantisme\n - Homoromantisme \n - Homoromantisme \n - Lamvanoromantisme\n - Lith(o)romantisme\n - Monoromantisme\n - Mororomantisme\n - Multiromantisme\n - Neuroromantisme\n - Ninromantisme\n - Noviromantisme\n - Omniromantisme\n - Omniaromantisme/ Panaromantisme\n - Panromantisme\n - Polyromantisme\n - Placioromantisme\n - Proquaromantisme\n - Proquuromantisme\n - Reciproromantisme\n - Quoiromantisme/ WTFromantisme/ Whatromantisme \n - Sapioromantisme \n - Skolioromantisme \n - Xumromantisme```")
       message.channel.send("```- Questionning```")
     } 
+
+    else if (message.content.startsWith('+def question')) {
+      message.channel.send({
+        embed: {
+          color: 3447003,
+          author: {
+            name: 'Questionning',
+            icon_url: 'https://pm1.narvii.com/6825/fbc29101104ac752751f05b2bc88e0f9251db231v2_128.jpg'
+          },
+          title: "Etat où la personne a du mal à se définir sur le plan d'attirance et / ou de genre."
+
+        }
+      })
+    }
     
     else if (message.content.includes('sex')) {
 
@@ -283,19 +297,6 @@ bot.on('message', message => {       // Machine à définition
       }
 
 
-      else if (message.content.startsWith('+def question')) {
-        message.channel.send({
-          embed: {
-            color: 3447003,
-            author: {
-              name: 'Questionning',
-              icon_url: 'https://pm1.narvii.com/6825/fbc29101104ac752751f05b2bc88e0f9251db231v2_128.jpg'
-            },
-            title: "Etat où la personne a du mal à se définir sur le plan d'attirance et / ou de genre."
-
-          }
-        })
-      }
       else if (message.content.startsWith('+def abrosex')) {
         message.channel.send({
           embed: {
@@ -881,7 +882,7 @@ bot.on('message', message => {       // Machine à définition
               name: 'Apothiromantisme',
               icon_url: 'https://pm1.narvii.com/6852/a67b77787fa83c982ac80d99c52f57827f8f8d5fv2_128.jpg'
             },
-            title: "Dégoût envers l'amour'."
+            title: "Dégoût envers l'amour."
 
           }
         })
@@ -1256,7 +1257,7 @@ bot.on('message', message => {       // Machine à définition
 
 
 
-      else if (message.content.startsWith('+def morosex')) {
+      else if (message.content.startsWith('+def mororom')) {
         message.channel.send({
           embed: {
             color: 3447003,
