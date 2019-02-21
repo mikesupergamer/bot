@@ -7,7 +7,7 @@ bot.on('ready', () => {
 });
 
 bot.on('message', message => {
-  if (message.author.id = '526114020198187018') {
+  if (message.author.id === '526114020198187018') {
     if (message.content.startsWith('+def')) {
       message.delete()
     }
