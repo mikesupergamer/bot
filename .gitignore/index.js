@@ -18,7 +18,7 @@ bot.on('message', message => {       // Machine à définition
   if (message.content.startsWith('+def')) {
 
     if (message.content === '+def random' ) {
-      var defr = Math.floor(Math.random() * 39);
+      var defr = Math.floor(Math.random() * 77);
       switch (defr) {
         case 0 : message.channel.send('+def questionning');break;
         case 1 : message.channel.send('+def allosexualité');break;
@@ -59,6 +59,44 @@ bot.on('message', message => {       // Machine à définition
         case 36 : message.channel.send('+def quoisexualité');break;
         case 37 : message.channel.send('+def skoliosexualité');break;
         case 38 : message.channel.send('+def xumsexualité');break;
+        case 41 : message.channel.send('+def alloromantisme');break;
+        case 42 : message.channel.send('+def androromantisme');break;
+        case 43 : message.channel.send('+def androgynoromantisme');break;
+        case 44 : message.channel.send('+def apothiromantisme');break;
+        case 45 : message.channel.send('+def aromantisme');break;
+        case 46 : message.channel.send('+def autoromantisme');break;
+        case 47 : message.channel.send('+def biromantisme');break;
+        case 48 : message.channel.send('+def caedoromantisme');break;
+        case 49 : message.channel.send('+def cétéroromantisme');break;
+        case 50 : message.channel.send('+def cupioromantisme');break;
+        case 51 : message.channel.send('+def demiromantisme');break;
+        case 52 : message.channel.send('+def dysphoraromantisme');break;
+        case 53 : message.channel.send('+def frayromantisme');break;
+        case 54 : message.channel.send('+def greyromantisme');break;
+        case 55 : message.channel.send('+def gynéromantisme');break;
+        case 56 : message.channel.send('+def hétéroromantisme');break;
+        case 57 : message.channel.send('+def homoromantisme');break;
+        case 58 : message.channel.send('+def homosexuel');break;
+        case 59 : message.channel.send('+def homosexuelle');break;
+        case 60 : message.channel.send('+def lamvanoromantisme');break;
+        case 61 : message.channel.send('+def lithoromantisme');break;
+        case 62 : message.channel.send('+def monoromantisme');break;
+        case 63 : message.channel.send('+def mororomantisme');break;
+        case 64 : message.channel.send('+def multiromantisme');break;
+        case 65 : message.channel.send('+def neuroromantisme');break;
+        case 66 : message.channel.send('+def ninromantisme');break;
+        case 67 : message.channel.send('+def noviromantisme');break;
+        case 68 : message.channel.send('+def omniromantisme');break;
+        case 69 : message.channel.send('+def omniaromantisme');break;
+        case 70 : message.channel.send('+def panromantisme');break;
+        case 71 : message.channel.send('+def polyromantisme');break;
+        case 72 : message.channel.send('+def placioromantisme');break;
+        case 73 : message.channel.send('+def proquaromantisme');break;
+        case 74 : message.channel.send('+def proquuromantisme');break;
+        case 75 : message.channel.send('+def reciproromantisme');break;
+        case 76 : message.channel.send('+def quoiromantisme');break;
+        case 40 : message.channel.send('+def skolioromantisme');break;
+        case 39 : message.channel.send('+def xumromantisme');break;
       }
     }
     else if (message.content.startsWith('+deflist')) {
