@@ -18,12 +18,47 @@ bot.on('message', message => {       // Machine à définition
   if (message.content.startsWith('+def')) {
 
     if (message.content === '+def random' ) {
-      var defr = Math.floor(Math.random() * 3);
+      var defr = Math.floor(Math.random() * 39);
       switch (defr) {
         case 0 : message.channel.send('+def questionning');break;
         case 1 : message.channel.send('+def allosexualité');break;
         case 2 : message.channel.send('+def androsexualité');break;
-            
+        case 3 : message.channel.send('+def androgynosexualité');break;
+        case 4 : message.channel.send('+def apothisexualité');break;
+        case 5 : message.channel.send('+def asexualité');break;
+        case 6 : message.channel.send('+def autosexualité');break;
+        case 7 : message.channel.send('+def bisexualité');break;
+        case 8 : message.channel.send('+def caedosexualité');break;
+        case 9 : message.channel.send('+def cétérosexualité');break;
+        case 10 : message.channel.send('+def cupiosexualité');break;
+        case 11 : message.channel.send('+def demisexualité');break;
+        case 12 : message.channel.send('+def dysphorasexualité');break;
+        case 13 : message.channel.send('+def fraysexualité');break;
+        case 14 : message.channel.send('+def greysexualité');break;
+        case 15 : message.channel.send('+def gynésexualité');break;
+        case 16 : message.channel.send('+def hétérosexualité');break;
+        case 17 : message.channel.send('+def homosexualité');break;
+        case 18 : message.channel.send('+def homosexuel');break;
+        case 19 : message.channel.send('+def homosexuelle');break;
+        case 20 : message.channel.send('+def lamvanosexualité');break;
+        case 21 : message.channel.send('+def lithosexualité');break;
+        case 22 : message.channel.send('+def monosexualité');break;
+        case 23 : message.channel.send('+def morosexualité');break;
+        case 24 : message.channel.send('+def multisexualité');break;
+        case 25 : message.channel.send('+def neurosexualité');break;
+        case 26 : message.channel.send('+def ninsexualité');break;
+        case 27 : message.channel.send('+def novisexualité');break;
+        case 28 : message.channel.send('+def omnisexualité');break;
+        case 29 : message.channel.send('+def omniasexualité');break;
+        case 30 : message.channel.send('+def pansexualité');break;
+        case 31 : message.channel.send('+def polysexualité');break;
+        case 32 : message.channel.send('+def placiosexualité');break;
+        case 33 : message.channel.send('+def proquasexualité');break;
+        case 34 : message.channel.send('+def proquusexualité');break;
+        case 35 : message.channel.send('+def reciprosexualité');break;
+        case 36 : message.channel.send('+def quoisexualité');break;
+        case 37 : message.channel.send('+def skoliosexualité');break;
+        case 38 : message.channel.send('+def xumsexualité');break;
       }
     }
     else if (message.content.startsWith('+deflist')) {
