@@ -14,6 +14,7 @@ bot.on('message', message => {       // Machine à définition
     if (message.content === '+def random' ) {
       var defr = Math.floor(Math.random() * 3);
       message.channel.send(defr);
+      message.channel.send(Math.floor(Math.random() * 3));
       switch (defr) {
         case 0 : message.channel.send('+def questionning');break;
         case 1 : message.channel.send('+def allosexualité');break;
