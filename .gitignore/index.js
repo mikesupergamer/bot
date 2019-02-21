@@ -11,13 +11,14 @@ bot.on('ready', () => {
 bot.on('message', message => {       // Machine à définition
   if (message.content.startsWith('+def')) {
 
-    if (message.content.startsWith('+def random')) {
-      var defr = Math.round(Math.random*2);
+    if (message.content === '+def random' ) {
+      var defr = Math.floor(Math.random() * 3);
       message.channel.send(defr);
       switch (defr) {
         case 0 : message.channel.send('+def questionning');break;
         case 1 : message.channel.send('+def allosexualité');break;
         case 2 : message.channel.send('+def androsexualité');break;
+            
       }
     }
     else if (message.content.startsWith('+deflist')) {
