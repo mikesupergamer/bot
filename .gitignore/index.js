@@ -57,12 +57,12 @@ bot.on('message', message => {
   }
 })
 bot.on('message', message => {
-  if (message.content === '+bumpreset')
+  if (message.content === '+bumpreset') {
   if (message.author.id === '263268239038087168') {
     bumpers = []
     message.channel.send('*Points de bump reset !*')
 
-  }
+  }}
 
 })
 
