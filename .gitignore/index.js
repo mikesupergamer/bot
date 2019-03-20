@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-bot.user.setActivity("Type !help");
 
 bot.on('ready', () => {
   console.log('Connecté en tant que ' + bot.user.tag);
