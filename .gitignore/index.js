@@ -6,7 +6,7 @@ bot.on('ready', () => {
 });
 
 
-bot.on('message', message => {
+bot.on('message', message => { // Machine à définition, sup des messages de LGBT+ BOT
   if (message.author.id === '526114020198187018') {
     if (message.content.startsWith('+def')) {
       message.delete()
@@ -14,19 +14,19 @@ bot.on('message', message => {
   }
 })
 
-bot.on('message', message => {
+bot.on('message', message => { // +help
   if (message.content.startsWith('+help')) {
     message.channel.send('__**LGBT+ BOT**__ || *Développé par __Mikeo__*\n \n**+def [ terme ]** = Définit un terme du lexique. LGBT+\n**+deflist** = Montre les termes définis par le bot. \n**+bumppoints** = Montre les points de bumps acquéris.')
   }
 })
 
 var bumpers = [];
-bot.on('message', message => {
+bot.on('message', message => { // Disboard count
   if (message.content === '!disboard bump') {
     testbump = message.author.id
     userbump = message.author.username
   }
-  if (message.author.id === '302050872383242240') {
+  else if (message.author.id === '302050872383242240') {
     if (message.content.includes('done')) {
       var albump = false
       for (var i = 0; i < bumpers.length; i++) {
@@ -45,42 +45,34 @@ bot.on('message', message => {
       }
     }
   }
-})
 
-bot.on('message', message => {
-  if (message.content === '+bumppoints') {
+  else if (message.content === '+bumppoints') {
     message.channel.send('__**Points de bump**__\n \n')
     for (var i2 = 0; i2 < bumpers.length; i2++) {
       message.channel.send('**' + bumpers[i2].name + '**' + " = " + bumpers[i2].points + " points")
 
     }
   }
-})
-bot.on('message', message => {
-  if (message.content === '+bumpreset') {
-  if (message.author.id === '263268239038087168') {
-    bumpers = []
-    message.channel.send('*Points de bump reset !*')
-
-  }}
-
-})
 
 
+  else if (message.content === '+bumpreset') {
+    if (message.author.id === '263268239038087168') {
+      bumpers = []
+      message.channel.send('*Points de bump reset !*')
 
-bot.on('message', message => {
-  if (message.content === '+summer')
-  if (message.author.id === '263268239038087168') {
+    }
+  } 
+  else if (message.content === '+summer') {
+
     bumpers.push({
       name: 'Summer 🍎',
       id: 518853312880312331,
       points: 1
     })
-
   }
 
-})
 
+})
 
 
 bot.on('message', message => {       // Machine à définition
@@ -1431,12 +1423,6 @@ bot.on('message', message => {       // Machine à définition
     }
   }
 });
-
-
-
-
-
-
 
 
 bot.login(process.env.TOKEN);
