@@ -51,7 +51,7 @@ bot.on('message', message => {
   if (message.content === '+bumppoints') {
     message.channel.send('__**Points de bump**__\n \n')
     for (var i2 = 0; i2 < bumpers.length; i2++) {
-      message.channel.send('**' + bumpers[i2].name + '**' + " = " + bumpers[i2].points + "points")
+      message.channel.send('**' + bumpers[i2].name + '**' + " = " + bumpers[i2].points + " points")
 
     }
   }
@@ -1236,7 +1236,7 @@ bot.on('message', message => {       // Machine à définition
             color: 3447003,
             author: {
               name: 'Androgynoromantisme',
-              icon_url: 'https://pm1.narvii.com/6698/369cbccdf220d553d943d010995ef98833757463_128.jpg'
+              icon_url: 'https://pm1.narvii.com/7114/fcc9beeefc20bf1f3b731d2ade8d2b126bd794d8r1-1154-692v2_128.jpg'
             },
             title: "Attirance romantique d'une personne androgyne  ( physique \" masculin et féminin \" ( la masculinité et féminité étant subjectifs.ves )) envers des personnes de genre(s) du spectre féminin et / ou masculin. "
 
