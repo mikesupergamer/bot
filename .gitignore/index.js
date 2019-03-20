@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-
+var bumpers = [];
 
 bot.on('ready', () => {
   console.log('Connecté en tant que ' + bot.user.tag);
@@ -21,7 +21,7 @@ bot.on('message', message => { // +help
   }
 })
 
-var bumpers = [];
+
 bot.on('message', message => { // Disboard count
   if (message.content === '!disboard bump') {
     testbump = message.author.id
@@ -68,6 +68,15 @@ bot.on('message', message => { // Disboard count
     bumpers.push({
       name: 'Summer 🍎',
       id: 518853312880312331,
+      points: 1
+    })
+  }
+
+  else if (message.content === '+nezumi') {
+
+    bumpers.push({
+      name: 'Nezumi',
+      id: 218335708979396608,
       points: 1
     })
   }
