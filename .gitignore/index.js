@@ -49,7 +49,7 @@ bot.on('message', message => {
   }
 })
 bot.on('message', message => {
-  if (message.content === '+bumpoints') {
+  if (message.content === '+bumppoints') {
     message.channel.send('__**Points de bump**__\n \n')
     for (var i2 = 0; i2 < bumpers.length; i2++) {
       message.channel.send('**' + bumpers[i2].name + '**' + " = " + bumpers[i2].points + "points")
