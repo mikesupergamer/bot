@@ -22,6 +22,10 @@ bot.on('message', message => {
 
 var bumpers = [];
 bot.on('message', message => {
+  if (message.content === '!disboard bump') {
+    testbump = message.author.id
+    userbump = message.author.username
+  }
   if (message.author.id === '302050872383242240') {
     if (message.content.includes('done')) {
       var albump = false
@@ -42,12 +46,7 @@ bot.on('message', message => {
     }
   }
 })
-bot.on('message', message => {
-  if (message.content === '!disboard bump') {
-    testbump = message.author.id
-    userbump = message.author.username
-  }
-})
+
 bot.on('message', message => {
   if (message.content === '+bumppoints') {
     message.channel.send('__**Points de bump**__\n \n')
@@ -66,6 +65,24 @@ bot.on('message', message => {
   }
 
 })
+
+
+
+bot.on('message', message => {
+  if (message.content === '+summer')
+  if (message.author.id === '263268239038087168') {
+    bumpers.push({
+      name: 'Summer 🍎',
+      id: 518853312880312331,
+      points: 1
+    })
+
+  }
+
+})
+
+
+
 bot.on('message', message => {       // Machine à définition
   if (message.content.startsWith('+def')) {
 
@@ -152,8 +169,8 @@ bot.on('message', message => {       // Machine à définition
       }
     }
     else if (message.content.startsWith('+deflist')) {
-      message.channel.send("__**Liste des termes définis**__ \n``` - Allosexualité/ Zedsexualité/ Z-sexualité\n - Androsexualité\n - Androgynosexualité\n - Apothisexualité\n - Asexualité \n - Autosexualité \n - Bisexualité\n - Caed(o)sexualité\n - Cétérosexualité\n - Cupi(o)sexualité\n - Demisexualité/ Demi-sexualité\n - Dysphorasexualité\n - Fraysexualité/ Ignotasexualité\n - Greysexualité/ Graysexualité/ Gray-(a)sexualité/ Grey-(a)sexualité \n - Gynésexualité\n - Hétérosexualité \n - Homosexualité\n - Homosexualité \n - Homosexualité \n - Lamvanosexualité\n - Lith(o)sexualité\n - Monosexualité\n - Morosexualité\n - Multisexualité\n - Neurosexualité\n - Ninsexualité\n - Novisexualité\n - Omnisexualité\n - Omniasexualité/ Panasexualité\n - Pansexualité\n - Polysexualité\n - Placiosexualité\n - Proquasexualité\n - Proquusexualité\n - Reciprosexualité\n - Quoisexualité/ WTFsexualité/ Whatsexualité \n - Sapiosexualité \n - Skoliosexualité \n - Xumsexualité```")
-      message.channel.send("``` - Alloromantisme/ Zedromantisme/ Z-romantisme\n - Androromantisme\n - Androgynoromantisme\n - Apothiromantisme\n - Aromantisme \n - Autoromantisme \n - Biromantisme\n - Caed(o)romantisme\n - Cétéroromantisme\n - Cupi(o)romantisme\n - Demiromantisme/ Demi-romantisme\n - Dysphoraromantisme\n - Frayromantisme/ Ignotaromantisme\n - Greyromantisme/ Grayromantisme/ Gray-(a)romantisme/ Grey-(a)romantisme\n - Gynéromantisme\n - Hétéroromantisme \n - Homoromantisme\n - Homoromantisme \n - Homoromantisme \n - Lamvanoromantisme\n - Lith(o)romantisme\n - Monoromantisme\n - Mororomantisme\n - Multiromantisme\n - Neuroromantisme\n - Ninromantisme\n - Noviromantisme\n - Omniromantisme\n - Omniaromantisme/ Panaromantisme\n - Panromantisme\n - Polyromantisme\n - Placioromantisme\n - Proquaromantisme\n - Proquuromantisme\n - Reciproromantisme\n - Quoiromantisme/ WTFromantisme/ Whatromantisme \n - Sapioromantisme \n - Skolioromantisme \n - Xumromantisme```")
+      message.channel.send("__**Liste des termes définis**__ \n``` - Allosexualité/ Zedsexualité/ Z-sexualité\n - Androsexualité\n - Androgynosexualité\n - Apothisexualité\n - Asexualité \n - Autosexualité \n - Bisexualité\n - Caed(o)sexualité\n - Cétérosexualité\n - Cupi(o)sexualité\n - Demisexualité/ Demi-sexualité\n - Dysphorasexualité\n - Fraysexualité/ Ignotasexualité\n - Greysexualité/ Graysexualité/ Gray-(a)sexualité/ Grey-(a)sexualité \n - Gynésexualité\n - Hétérosexualité \n - Homosexualité\n - Homosexualité \n - Homosexualité \n - Lamvanosexualité\n - Lith(o)sexualité / Akoisexualité\n - Monosexualité\n - Morosexualité\n - Multisexualité\n - Neurosexualité\n - Ninsexualité\n - Novisexualité\n - Omnisexualité\n - Omniasexualité/ Panasexualité\n - Pansexualité\n - Polysexualité\n - Placiosexualité\n - Proquasexualité\n - Proquusexualité\n - Reciprosexualité\n - Quoisexualité/ WTFsexualité/ Whatsexualité \n - Sapiosexualité \n - Skoliosexualité \n - Xumsexualité```")
+      message.channel.send("``` - Alloromantisme/ Zedromantisme/ Z-romantisme\n - Androromantisme\n - Androgynoromantisme\n - Apothiromantisme\n - Aromantisme \n - Autoromantisme \n - Biromantisme\n - Caed(o)romantisme\n - Cétéroromantisme\n - Cupi(o)romantisme\n - Demiromantisme/ Demi-romantisme\n - Dysphoraromantisme\n - Frayromantisme/ Ignotaromantisme\n - Greyromantisme/ Grayromantisme/ Gray-(a)romantisme/ Grey-(a)romantisme\n - Gynéromantisme\n - Hétéroromantisme \n - Homoromantisme\n - Homoromantisme \n - Homoromantisme \n - Lamvanoromantisme\n - Lith(o)romantisme / Akoiromantisme\n - Monoromantisme\n - Mororomantisme\n - Multiromantisme\n - Neuroromantisme\n - Ninromantisme\n - Noviromantisme\n - Omniromantisme\n - Omniaromantisme/ Panaromantisme\n - Panromantisme\n - Polyromantisme\n - Placioromantisme\n - Proquaromantisme\n - Proquuromantisme\n - Reciproromantisme\n - Quoiromantisme/ WTFromantisme/ Whatromantisme \n - Sapioromantisme \n - Skolioromantisme \n - Xumromantisme```")
       message.channel.send("```- Questionning```")
     }
 
@@ -472,7 +489,7 @@ bot.on('message', message => {       // Machine à définition
               name: 'Hypersexualité',
               icon_url: 'https://pm1.narvii.com/6827/896caf2c052e51ea9b5aa6dd17248161a51c47efv2_128.jpg'
             },
-            title: "Fortes attirances sexuelles. Opposé à l'hyposexualité. Le préfixe \"sapio\" peut s\'appliquer à d\'autres sexualités; exemple : hyper-homosexuel.le, hyper-pansexuel.le."
+            title: "Fortes attirances sexuelles. Opposé à l'hyposexualité. Le préfixe \"hyper\" peut s\'appliquer à d\'autres sexualités; exemple : hyper-homosexuel.le, hyper-pansexuel.le."
 
           }
         })
@@ -486,7 +503,7 @@ bot.on('message', message => {       // Machine à définition
               name: 'Hyposexualité',
               icon_url: 'https://pm1.narvii.com/6827/165c45c33ae9100eda2a3ef3144d23edd31c58efv2_128.jpg'
             },
-            title: 'Faibles attirances sexuelles. Opposé à l\'hypersexualité. Le préfixe \"sapio\" peut s\'appliquer à d\'autres sexualités; exemple : hypo-homosexuel.le, hypo-pansexuel.le. '
+            title: 'Faibles attirances sexuelles. Opposé à l\'hypersexualité. Le préfixe \"hypo\" peut s\'appliquer à d\'autres sexualités; exemple : hypo-homosexuel.le, hypo-pansexuel.le. '
 
           }
         })
@@ -632,7 +649,7 @@ bot.on('message', message => {       // Machine à définition
         })
       }
 
-      else if (message.content.startsWith('+def lithsex') || message.content.startsWith('+def lithosex')) {
+      else if (message.content.startsWith('+def lithsex') || message.content.startsWith('+def lithosex') || message.content.startsWith('+def akoisex')) {
         message.channel.send({
           embed: {
             color: 3447003,
