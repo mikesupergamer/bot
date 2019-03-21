@@ -24,35 +24,35 @@ bot.on('message', message => { // +help
 
 bot.on('message', message => { // Disboard count
   if (message.content === '!disboard bump') {
-    testbump = message.author.id
-    userbump = message.author.username
+    bumpid = message.author.id
+    bumpername = message.author.username
   }
   else if (message.author.id === '302050872383242240') {
     if (message.content.includes('done')) {
       var albump = false
       for (var i = 0; i < bumpers.length; i++) {
-        if (bumpers[i].id === testbump) {
+        if (bumpers[i].id === bumpid) {
           bumpers[i].points++
           albump = true
           break
         }
-        if (albump === false) {
-          bumpers.push({
-            name: userbump,
-            id: testbump,
-            points: 1
-          })
-        }
+      }
+      if (albump === false) {
+        bumpers.push({
+          name: bumpername,
+          id: bumperid,
+          points: 1
+        })
       }
     }
   }
 
   else if (message.content === '+bumppoints') {
-    message.channel.send('__**Points de bump**__\n \n')
+    var bumptext = '__**Points de bump :**__ \n \n'
     for (var i2 = 0; i2 < bumpers.length; i2++) {
-      message.channel.send('**' + bumpers[i2].name + '**' + " = " + bumpers[i2].points + " points")
-
+      var bumptext = bumptext + '**' + bumpers[i2].name + '** : ' + bumpers[i2].points + " points\n"
     }
+    message.channel.send(bumptext)
   }
 
 
@@ -62,27 +62,31 @@ bot.on('message', message => { // Disboard count
       message.channel.send('*Points de bump reset !*')
 
     }
-  } 
-  else if (message.content === '+summer') {
-
-    bumpers.push({
-      name: 'Summer 🍎',
-      id: 518853312880312331,
-      points: 1
-    })
   }
-
-  else if (message.content === '+nezumi') {
-
-    bumpers.push({
-      name: 'Nezumi',
-      id: 218335708979396608,
-      points: 1
-    })
+  else if (message.content.startsWith('+bumppush')) {
+    if (message.author.id === '263268239038087168') {
+      var albump = false
+      pusherid = message.content.substr(10, 18)
+      for (var i = 0; i < bumpers.length; i++) {
+        if (bumpers[i].id === pusherid) {
+          bumpers[i].points++
+          albump = true
+          break
+        }
+      }
+      if (albump === false) {
+        bumpers.push({
+          name: message.content.substr(29, 20),
+          id: pusherid,
+          points: 1
+        })
+      }
+    }
   }
-
 
 })
+
+
 
 
 bot.on('message', message => {       // Machine à définition
