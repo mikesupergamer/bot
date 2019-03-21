@@ -4,75 +4,20 @@ var bumpers = [];
 
 
 
-bot.on('message', message => { // Disboard count
-  if (message.content === '!disboard bump') {
-    bumpid = message.author.id
-    bumpername = message.author.username
-    message.channel.send('bumpid')
-  }
-})
-
-bot.on('message', message => {
-  if (message.content.startsWith("+test")) {
-    message.channel.send('sì');
-    var albump = false;
-    for (var i = 0; i < bumpers.length; i++) {
-      if (bumpers[i].id === bumpid) {
-        message.channel.send('for')
-        bumpers[i].points++;
-        albump = true;
-        break;
-      }
-    }
-    if (albump === false) {
-      message.channel.send('albump');
-      bumpers.push({
-        name: bumpername,
-        id: bumpid,
-        points: 1
-      })
+bot.on('message', message => { // Machine à définition, sup des messages de LGBT+ BOT
+  if (message.author.id === '526114020198187018') {
+    if (message.content.startsWith('+def')) {
+      message.delete()
     }
   }
 })
-bot.on('message', message => {
-  if (message.content === '+bumppoints') {
-    var bumptext = '__**Points de bump :**__ \n \n'
-    for (var i2 = 0; i2 < bumpers.length; i2++) {
-      var bumptext = bumptext + '**' + bumpers[i2].name + '** : ' + bumpers[i2].points + " points\n"
-    }
-    message.channel.send(bumptext)
+
+bot.on('message', message => { // +help
+  if (message.content.startsWith('+help')) {
+    message.channel.send('__**LGBT+ BOT**__ || *Développé par __Mikeo__*\n \n**+def [ terme ]** = Définit un terme du lexique. LGBT+\n**+deflist** = Montre les termes définis par le bot. \n**+bumppoints** = Montre les points de bumps acquéris.')
   }
-
-
-  else if (message.content === '+bumpreset') {
-    if (message.author.id === '263268239038087168') {
-      bumpers = []
-      message.channel.send('*Points de bump reset !*')
-
-    }
-  }
-  else if (message.content.startsWith('+bumppush')) {
-    if (message.author.id === '263268239038087168') {
-      var albump = false
-      pusherid = message.content.substr(14, 18)
-      for (var i = 0; i < bumpers.length; i++) {
-        if (bumpers[i].id === pusherid) {
-          bumpers[i].points = bumpers[i].points + parseInt(message.content.substr(11, 2))
-          albump = true
-          break
-        }
-      }
-      if (albump === false) {
-        bumpers.push({
-          name: message.content.substr(31, 20),
-          id: pusherid,
-          points: parseInt(message.content.substr(11, 2))
-        })
-      }
-    }
-  }
-
 })
+
 
 
 bot.on('message', message => {       // Machine à définition
