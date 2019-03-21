@@ -1,6 +1,26 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var bumpers = [];
+function wait5() {
+  setTimeout(gobumpf, 5000)
+}
+function gobumpf() {
+  var albump = false
+      for (var i = 0; i < bumpers.length; i++) {
+        if (bumpers[i].id === bumpid) {
+          bumpers[i].points++
+          albump = true
+          break
+        }
+      }
+      if (albump === false) {
+        bumpers.push({
+          name: bumpername,
+          id: bumperid,
+          points: 1
+        })
+      }
+}
 
 bot.on('ready', () => {
   console.log('Connecté en tant que ' + bot.user.tag);
@@ -29,21 +49,7 @@ bot.on('message', message => { // Disboard count
   }
   else if (message.author.id === '302050872383242240') {
     if (message.content.includes('done')) {
-      var albump = false
-      for (var i = 0; i < bumpers.length; i++) {
-        if (bumpers[i].id === bumpid) {
-          bumpers[i].points++
-          albump = true
-          break
-        }
-      }
-      if (albump === false) {
-        bumpers.push({
-          name: bumpername,
-          id: bumperid,
-          points: 1
-        })
-      }
+      wait5()
     }
   }
 
@@ -66,19 +72,19 @@ bot.on('message', message => { // Disboard count
   else if (message.content.startsWith('+bumppush')) {
     if (message.author.id === '263268239038087168') {
       var albump = false
-      pusherid = message.content.substr(10, 18)
+      pusherid = message.content.substr(14, 18)
       for (var i = 0; i < bumpers.length; i++) {
         if (bumpers[i].id === pusherid) {
-          bumpers[i].points++
+          bumpers[i].points = bumpers[i].points+parseInt(message.content.substr(11, 2))
           albump = true
           break
-        }
+ }
       }
       if (albump === false) {
         bumpers.push({
-          name: message.content.substr(29, 20),
+          name: message.content.substr(31, 20),
           id: pusherid,
-          points: 1
+          points: parseInt(message.content.substr(11, 2))
         })
       }
     }
