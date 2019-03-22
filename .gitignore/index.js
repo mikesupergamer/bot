@@ -1,14 +1,16 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var bumpers = [];
-
-  if (albump === false) {
-    bumpers.push({
-      name: bumpername,
-      id: bumperid,
-      points: 1
-    })
+function compare(a, b) {
+  const burl1 = parseInt(a.points);
+  const burl2 = parseInt(b.points);
+  let comparison = 0;
+  if (burl1 > burl2) {
+    comparison = -1;
+  } else if (burl1 < burl2) {
+    comparison = 1;
   }
+  return comparison;
 }
 
 bot.on('ready', () => {
@@ -38,63 +40,63 @@ bot.on('message', message => { // Disboard count
   }
   else if (message.author.id === '302050872383242240') {
     if (message.content.includes('done')) {
-
-      var albump = false;
-      for (var i = 0; i < bumpers.length; i++) {
-        if (bumpers[i].id === bumpid) {
-          bumpers[i].points++;
-          albump = true;
-          break;
-        }
+  
+    var albump = false;
+    for (var i = 0; i < bumpers.length; i++) {
+      if (bumpers[i].id === bumpid) {
+        bumpers[i].points++;
+        albump = true;
+        break;
       }
-      if (albump === false) {
-        bumpers.push({
-          name: bumpername,
-          id: bumpid,
-          points: 1
-        });
-      };
     }
+    if (albump === false) {
+      bumpers.push({
+        name: bumpername,
+        id: bumpid,
+        points: 1
+      });
+    };
   }
+}
 
 
   if (message.content === '+bumppoints') {
-    var bumptext = '__**Points de bump :**__ \n \n'
-    for (var i2 = 0; i2 < bumpers.length; i2++) {
-      var bumptext = bumptext + '**' + bumpers[i2].name + '** : ' + bumpers[i2].points + " points\n"
-    }
-    message.channel.send(bumptext)
+  bumpers.sort(compare)
+  var bumptext = '__**Points de bump :**__ \n \n'
+  for (var i2 = 0; i2 < bumpers.length; i2++) {
+    var bumptext = bumptext + '**' + bumpers[i2].name + '** : ' + bumpers[i2].points + " points\n"
   }
+  message.channel.send(bumptext)
+}
 
 
-  else if (message.content === '+bumpreset') {
-    if (message.author.id === '263268239038087168') {
-      bumpers = []
-      message.channel.send('*Points de bump reset !*')
+else if (message.content === '+bumpreset') {
+  if (message.author.id === '263268239038087168') {
+    bumpers = []
+    message.channel.send('*Points de bump reset !*')
 
-    }
   }
-  else if (message.content.startsWith('+bumppush')) {
-    if (message.author.id === '263268239038087168') {
-      var albump = false
-      pusherid = message.content.substr(13, 18)
-      for (var i = 0; i < bumpers.length; i++) {
-        if (bumpers[i].id === pusherid) {
-          bumpers[i].points = bumpers[i].points + parseInt(message.content.substr(10, 2))
-          message.channel.send(parseInt(message.content.substr(10, 2)))
-          albump = true
-          break
-        }
-      }
-      if (albump === false) {
-        bumpers.push({
-          name: message.content.substr(32, 30),
-          id: pusherid,
-          points: parseInt(message.content.substr(10, 2))
-        })
+}
+else if (message.content.startsWith('+bumppush')) {
+  if (message.author.id === '263268239038087168') {
+    var albump = false
+    pusherid = message.content.substr(13, 18)
+    for (var i = 0; i < bumpers.length; i++) {
+      if (bumpers[i].id === pusherid) {
+        bumpers[i].points = bumpers[i].points + parseInt(message.content.substr(10, 2))
+        albump = true
+        break
       }
     }
+    if (albump === false) {
+      bumpers.push({
+        name: message.content.substr(32, 30),
+        id: pusherid,
+        points: parseInt(message.content.substr(10, 2))
+      })
+    }
   }
+}
 
 })
 
