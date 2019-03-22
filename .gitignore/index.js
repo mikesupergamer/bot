@@ -1,7 +1,30 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var bumpers = [];
+function wait5() {
+  setTimeout(gobumpf, 5000)
+}
+function gobumpf() {
+  var albump = false
+  for (var i = 0; i < bumpers.length; i++) {
+    if (bumpers[i].id === bumpid) {
+      bumpers[i].points++
+      albump = true
+      break
+    }
+  }
+  if (albump === false) {
+    bumpers.push({
+      name: bumpername,
+      id: bumperid,
+      points: 1
+    })
+  }
+}
 
+bot.on('ready', () => {
+  console.log('Connecté en tant que ' + bot.user.tag);
+});
 
 
 bot.on('message', message => { // Machine à définition, sup des messages de LGBT+ BOT
@@ -12,11 +35,82 @@ bot.on('message', message => { // Machine à définition, sup des messages de LG
   }
 })
 
+
 bot.on('message', message => { // +help
   if (message.content.startsWith('+help')) {
     message.channel.send('__**LGBT+ BOT**__ || *Développé par __Mikeo__*\n \n**+def [ terme ]** = Définit un terme du lexique. LGBT+\n**+deflist** = Montre les termes définis par le bot. \n**+bumppoints** = Montre les points de bumps acquéris.')
   }
 })
+
+bot.on('message', message => { // Disboard count
+  if (message.content === '!disboard bump') {
+    bumpid = message.author.id
+    bumpername = message.author.username
+  }
+  else if (message.author.id === '302050872383242240') {
+    if (message.content.includes('done')) {
+
+      var albump = false;
+      for (var i = 0; i < bumpers.length; i++) {
+        if (bumpers[i].id === bumpid) {
+          bumpers[i].points++;
+          albump = true;
+          break;
+        }
+      }
+      if (albump === false) {
+        bumpers.push({
+          name: bumpername,
+          id: bumpid,
+          points: 1
+        });
+      };
+    }
+  }
+
+
+  if (message.content === '+bumppoints') {
+    var bumptext = '__**Points de bump :**__ \n \n'
+    for (var i2 = 0; i2 < bumpers.length; i2++) {
+      var bumptext = bumptext + '**' + bumpers[i2].name + '** : ' + bumpers[i2].points + " points\n"
+    }
+    message.channel.send(bumptext)
+  }
+
+
+  else if (message.content === '+bumpreset') {
+    if (message.author.id === '263268239038087168') {
+      bumpers = []
+      message.channel.send('*Points de bump reset !*')
+
+    }
+  }
+  else if (message.content.startsWith('+bumppush')) {
+    if (message.author.id === '263268239038087168') {
+      var albump = false
+      pusherid = message.content.substr(13, 18)
+      message.channel.send(pusherid)
+      for (var i = 0; i < bumpers.length; i++) {
+        if (bumpers[i].id === pusherid) {
+          bumpers[i].points = bumpers[i].points + parseInt(message.content.substr(10, 2))
+          message.channel.send(parseInt(message.content.substr(10, 2)))
+          albump = true
+          break
+        }
+      }
+      if (albump === false) {
+        bumpers.push({
+          name: message.content.substr(32, 30),
+          id: pusherid,
+          points: parseInt(message.content.substr(10, 2))
+        })
+      }
+    }
+  }
+
+})
+
+
 
 
 
