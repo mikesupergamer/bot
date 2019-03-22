@@ -67,60 +67,62 @@ bot.on('message', message => { // +help
 })
 
 bot.on('message', message => { // Done disboard
-  if (message.author.id === '302050872383242240') {
-    if (message.content.includes('done')) {
+  if (message.embeds.length > 0) {
+    var embed = message.embeds[0];
+    if (embed.image && embed.image.url == "https://disboard.org/images/bot-command-image-bump.png") {
       responsebump = true
     }
   }
 })
 
 bot.on('message', message => { // Disboard count
-  if (message.content === '!disboard bump') {
+  if (message.content.includes('!disboard bump')) {
     bumperid = message.author.id
     bumpername = message.author.username
     wait()
   }
 
 
-else if (message.content === '+bumppoints') {
-  bumpers.sort(compare)
-  var textofbump = '__**Points de bump :**__ \n \n'
-  for (var i2 = 0; i2 < bumpers.length; i2++) {
-    var textofbump = textofbump + '**' + bumpers[i2].name + '** : ' + bumpers[i2].points + " points\n"
+  else if (message.content === '+bumppoints') {
+    bumpers.sort(compare)
+    var textofbump = '__**Points de bump :**__ \n \n'
+    for (var i2 = 0; i2 < bumpers.length; i2++) {
+      var textofbump = textofbump + '**' + bumpers[i2].name + '** : ' + bumpers[i2].points + " points\n"
+    }
+    message.channel.send(textofbump)
   }
-  message.channel.send(textofbump)
-}
 
 
-else if (message.content === '+bumpreset') {
-  if (message.author.id === '263268239038087168') {
-    bumpers = []
-    message.channel.send('*Points de bump reset !*')
+  else if (message.content === '+bumpreset') {
+    if (message.author.id === '263268239038087168') {
+      bumpers = []
+      message.channel.send('*Points de bump reset !*')
 
+    }
   }
-}
-else if (message.content.startsWith('+bumppush')) {
-  if (message.author.id === '263268239038087168') {
-    var isaccount = false
-    pusherid = message.content.substr(13, 18)
-    for (var i = 0; i < bumpers.length; i++) {
-      if (bumpers[i].id === pusherid) {
-        bumpers[i].points = bumpers[i].points + parseInt(message.content.substr(10, 2))
-        isaccount = true
-        break
+  else if (message.content.startsWith('+bumppush')) {
+    if (message.author.id === '263268239038087168') {
+      var isaccount = false
+      pusherid = message.content.substr(13, 18)
+      for (var i = 0; i < bumpers.length; i++) {
+        if (bumpers[i].id === pusherid) {
+          bumpers[i].points = bumpers[i].points + parseInt(message.content.substr(10, 2))
+          isaccount = true
+          break
+        }
+      }
+      if (isaccount === false) {
+        bumpers.push({
+          name: message.content.substr(32, 30),
+          id: pusherid,
+          points: parseInt(message.content.substr(10, 2))
+        })
       }
     }
-    if (isaccount === false) {
-      bumpers.push({
-        name: message.content.substr(32, 30),
-        id: pusherid,
-        points: parseInt(message.content.substr(10, 2))
-      })
-    }
   }
-}
 
 })
+
 
 
 bot.on('message', message => {
