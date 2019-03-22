@@ -1,18 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var bumpers = [];
-function wait5() {
-  setTimeout(gobumpf, 5000)
-}
-function gobumpf() {
-  var albump = false
-  for (var i = 0; i < bumpers.length; i++) {
-    if (bumpers[i].id === bumpid) {
-      bumpers[i].points++
-      albump = true
-      break
-    }
-  }
+
   if (albump === false) {
     bumpers.push({
       name: bumpername,
@@ -89,7 +78,6 @@ bot.on('message', message => { // Disboard count
     if (message.author.id === '263268239038087168') {
       var albump = false
       pusherid = message.content.substr(13, 18)
-      message.channel.send(pusherid)
       for (var i = 0; i < bumpers.length; i++) {
         if (bumpers[i].id === pusherid) {
           bumpers[i].points = bumpers[i].points + parseInt(message.content.substr(10, 2))
