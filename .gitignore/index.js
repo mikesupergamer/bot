@@ -147,7 +147,28 @@ bot.on('message', message => {
       member.removeRole(role2).catch(console.error);
     }
   }
+
+
+else if (message.content.startsWith('+mute')) {
+  if (message.member.roles.some(r => ["✨ Admin ✨", "🌺 Modo 🌺", "🎀 Assistant(e) 🎀"].includes(r.name))) {
+    let role0 = message.guild.roles.find(r => r.name === "Au coin");
+    let member = message.mentions.members.first();
+    member.addRole(role0).catch(console.error)
+  }
+}
+
+else if (message.content.startsWith('+unmute')) {
+  if (message.member.roles.some(r => ["✨ Admin ✨", "🌺 Modo 🌺", "🎀 Assistant(e) 🎀"].includes(r.name))) {
+    let role0 = message.guild.roles.find(r => r.name === "Au coin");
+    let member = message.mentions.members.first();
+    member.removeRole(role0).catch(console.error)
+  }
+}
+
 })
+
+
+
 
 
 
