@@ -124,7 +124,7 @@ else if (message.content.startsWith('+bumppush')) {
 
 
 bot.on('message', message => {
-  if (message.content === '+verifyi') {
+  if (message.content.startsWith('+verifyi')) {
     if (message.member.roles.some(r => ["✨ Admin ✨", "🌺 Modo 🌺", "🎀 Assistant(e) 🎀"].includes(r.name))) {
       let role2 = message.guild.roles.find(r => r.name === "À Valider");
       let role1 = message.guild.roles.find(r => r.name === "Mineur(e)");
@@ -136,7 +136,7 @@ bot.on('message', message => {
     }
   }
 
-  else if (message.content === '+verifya') {
+  else if (message.content.startsWith('+verifya')) {
     if (message.member.roles.some(r => ["✨ Admin ✨", "🌺 Modo 🌺", "🎀 Assistant(e) 🎀"].includes(r.name))) {
       let role2 = message.guild.roles.find(r => r.name === "À Valider");
       let role1 = message.guild.roles.find(r => r.name === "Majeur(e)");
