@@ -126,21 +126,25 @@ else if (message.content.startsWith('+bumppush')) {
 bot.on('message', message => {
   if (message.content === '+verifyi') {
     if (message.member.roles.some(r => ["✨ Admin ✨", "🌺 Modo 🌺", "🎀 Assistant(e) 🎀"].includes(r.name))) {
+      let role2 = message.guild.roles.find(r => r.name === "À Valider");
       let role1 = message.guild.roles.find(r => r.name === "Mineur(e)");
       let role0 = message.guild.roles.find(r => r.name === "Membre");
       let member = message.mentions.members.first();
       member.addRole(role0).catch(console.error)
       member.addRole(role1).catch(console.error)
+      member.removeRole(role2).catch(console.error);
     }
   }
 
   else if (message.content === '+verifya') {
     if (message.member.roles.some(r => ["✨ Admin ✨", "🌺 Modo 🌺", "🎀 Assistant(e) 🎀"].includes(r.name))) {
+      let role2 = message.guild.roles.find(r => r.name === "À Valider");
       let role1 = message.guild.roles.find(r => r.name === "Majeur(e)");
       let role0 = message.guild.roles.find(r => r.name === "Membre");
       let member = message.mentions.members.first();
       member.addRole(role0).catch(console.error)
       member.addRole(role1).catch(console.error)
+      member.removeRole(role2).catch(console.error);
     }
   }
 })
