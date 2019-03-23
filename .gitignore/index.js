@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 var bumpers = [];
 var bumperid = ''
+var bumpername = ''
 var responsebump = false
-
 
 function isbump() {
   if (responsebump === true) {
@@ -19,13 +19,14 @@ function isbump() {
     if (isaccount === false) {
       responsebump = false
       bumpers.push({
-        name: message.guild.members.get(bumperid).displayName,
+        name: bumpername,
         id: bumperid,
         points: 1
       });
     };
   }
   else {
+    bumpername = ''
     bumperid = ''
   }
 }
@@ -42,16 +43,6 @@ function compare(a, b) {
     comparison = 1;
   }
   return comparison;
-}
-
-function bumpmaj() {
-  bumpers.sort(compare)
-  for (var i3 = 0; i3 < bumpers.length; i3++) {
-    askerid = bumpers[i3].id
-    if (bumpers[i3].name !== message.guild.members.get(askerid).displayName) {
-      bumpers[i3].name = message.guild.members.get(askerid).displayName
-    }
-  }
 }
 
 bot.on('ready', () => {
@@ -86,17 +77,17 @@ bot.on('message', message => { // Done disboard
 
 bot.on('message', message => { // Disboard count
   if (message.content.includes('!disboard bump')) {
-    bumpmaj()
     bumperid = message.author.id
+    bumpername = message.author.username
     wait()
   }
 
 
   else if (message.content === '+bumppoints') {
-    bumpmaj()
+    bumpers.sort(compare)
     var textofbump = '__**Points de bump :**__ \n \n'
     for (var i2 = 0; i2 < bumpers.length; i2++) {
-      var textofbump = textofbump + '`' + (i2 + 1) + '.`' + ' **' + bumpers[i2].name + '** :  `' + bumpers[i2].points + " points`\n"
+      var textofbump = textofbump + '`'+(i2+1)+'.`'+' **' + bumpers[i2].name + '** :  `' + bumpers[i2].points + " points`\n"
     }
     message.channel.send(textofbump)
   }
@@ -122,7 +113,7 @@ bot.on('message', message => { // Disboard count
       }
       if (isaccount === false) {
         bumpers.push({
-          name: message.guild.members.get(pusherid).displayName,
+          name: message.content.substr(32, 30),
           id: pusherid,
           points: parseInt(message.content.substr(10, 2))
         })
@@ -160,21 +151,21 @@ bot.on('message', message => {
   }
 
 
-  else if (message.content.startsWith('+mute')) {
-    if (message.member.roles.some(r => ["✨ Admin ✨", "🌺 Modo 🌺", "🎀 Assistant(e) 🎀"].includes(r.name))) {
-      let role0 = message.guild.roles.find(r => r.name === "Au coin");
-      let member = message.mentions.members.first();
-      member.addRole(role0).catch(console.error)
-    }
+else if (message.content.startsWith('+mute')) {
+  if (message.member.roles.some(r => ["✨ Admin ✨", "🌺 Modo 🌺", "🎀 Assistant(e) 🎀"].includes(r.name))) {
+    let role0 = message.guild.roles.find(r => r.name === "Au coin");
+    let member = message.mentions.members.first();
+    member.addRole(role0).catch(console.error)
   }
+}
 
-  else if (message.content.startsWith('+unmute')) {
-    if (message.member.roles.some(r => ["✨ Admin ✨", "🌺 Modo 🌺", "🎀 Assistant(e) 🎀"].includes(r.name))) {
-      let role0 = message.guild.roles.find(r => r.name === "Au coin");
-      let member = message.mentions.members.first();
-      member.removeRole(role0).catch(console.error)
-    }
+else if (message.content.startsWith('+unmute')) {
+  if (message.member.roles.some(r => ["✨ Admin ✨", "🌺 Modo 🌺", "🎀 Assistant(e) 🎀"].includes(r.name))) {
+    let role0 = message.guild.roles.find(r => r.name === "Au coin");
+    let member = message.mentions.members.first();
+    member.removeRole(role0).catch(console.error)
   }
+}
 
 })
 
