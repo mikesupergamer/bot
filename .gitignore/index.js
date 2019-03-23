@@ -87,7 +87,7 @@ bot.on('message', message => { // Disboard count
     bumpers.sort(compare)
     var textofbump = '__**Points de bump :**__ \n \n'
     for (var i2 = 0; i2 < bumpers.length; i2++) {
-      var textofbump = textofbump + '`'+(i2+1)+'.`'+'**' + bumpers[i2].name + '** :  `' + bumpers[i2].points + "` points\n"
+      var textofbump = textofbump + '`'+(i2+1)+'.`'+' **' + bumpers[i2].name + '** :  `' + bumpers[i2].points + " points`\n"
     }
     message.channel.send(textofbump)
   }
