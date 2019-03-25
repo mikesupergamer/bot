@@ -122,12 +122,12 @@ bot.on('message', message => { // Disboard count
     }
   }
 
-    else if (message.content.startsWith('+bumpdt')) {
+  else if (message.content.startsWith('+bumpdt')) {
     if (message.author.id === '263268239038087168') {
-      pusherid = message.content.substr(9, 18)
+      pusherid = message.content.substr(8, 18)
       for (var i = 0; i < bumpers.length; i++) {
         if (bumpers[i].id === pusherid) {
-          bumpers.slice(i, 1)
+          bumpers.splice(i)
           break
         }
       }
