@@ -87,7 +87,8 @@ bot.on('message', message => { // Disboard count
     bumpers.sort(compare)
     var textofbump = '__**Points de bump :**__ \n \n'
     for (var i2 = 0; i2 < bumpers.length; i2++) {
-      var textofbump = textofbump + '`'+(i2+1)+'.`'+' **' + bumpers[i2].name + '** :  `' + bumpers[i2].points + " points`\n"
+      bumpers[i2].name = message.guild.members.get(bumpers[i2].id).displayName
+      var textofbump = textofbump + '**' + bumpers[i2].name + '** : ' + bumpers[i2].points + " points\n"
     }
     message.channel.send(textofbump)
   }
@@ -113,7 +114,7 @@ bot.on('message', message => { // Disboard count
       }
       if (isaccount === false) {
         bumpers.push({
-          name: message.content.substr(32, 30),
+          name: message.guild.members.get(message.content.substr(13, 18)).displayName,
           id: pusherid,
           points: parseInt(message.content.substr(10, 2))
         })
@@ -121,7 +122,20 @@ bot.on('message', message => { // Disboard count
     }
   }
 
+  else if (message.content.startsWith('+bumpdt')) {
+    if (message.author.id === '263268239038087168') {
+      pusherid = message.content.substr(9, 18)
+      for (var i = 0; i < bumpers.length; i++) {
+        if (bumpers[i].id === pusherid) {
+          bumpers.slice(i)
+          break
+        }
+      }
+    }
+  }
+
 })
+
 
 
 
